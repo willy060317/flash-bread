@@ -18,8 +18,24 @@ def order_bread():
                 print(f'지금 주문 할 수 있는 {bread_type}의수량은 {stock[bread_type]} 입니다')
         else:
             print("다시 주문해주세요")
+#붕어빵 관리자
+def admin_mode():
+    while True:
+            bread_type = input("채울 메뉴를 선택해 주세요,종료,뒤로가기 눌러주세요")
+            if bread_type  == ("뒤로가기"):
+                    break
+            if bread_type in stock:
+                bread_count = int(input("창고에 추가할 게수를 입력하세요"))
+                stock[bread_type]+= bread_count
+                print(f"{bread_type} {bread_count}개가 추가되었음")
+            else:
+                 print("그런 메뉴는 없어요")
+def current_mode():
+    while True:
+         print(stock)
+         break
 while True:
-    mode = input("원하는 모드를 선택하세요(주문, 관리자, 종료): ")
+    mode = input("원하는 모드를 선택하세요(주문, 관리자, 종료,현상태보기): ")
     if mode == "종료":
         break
         print("시스템이 종료되었습니다")
@@ -27,5 +43,6 @@ while True:
         order_bread()
     elif mode == "관리자":    
         admin_mode()
-    
+    elif mode == "현상태보기":
+        current_mode()
     
