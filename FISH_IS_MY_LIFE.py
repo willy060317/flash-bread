@@ -21,6 +21,12 @@ def order_bread():
 #붕어빵 관리자
 def admin_mode():
     while True:
+            # password =input("비밀번호를 입력해주세요")
+            # if password == int(0000):
+            #     print("관리자 모드에 들어갑니다")
+
+            
+                 
             bread_type = input("채울 메뉴를 선택해 주세요,종료,뒤로가기 눌러주세요")
             if bread_type  == ("뒤로가기"):
                     break
